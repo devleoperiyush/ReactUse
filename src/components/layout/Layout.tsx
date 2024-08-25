@@ -1,13 +1,20 @@
-import React, {useState} from  'react';
+import {useState} from  'react';
 import LocalStorageService from '../../config/LocalStorageService';
+import PublicRoute from './public/PublicRoute';
+import {Routes} from 'react-router-dom';
+import Login from '../login/Login';
 
-function Layout(){
+export default function Layout(){
     const isUserAuthenticated = LocalStorageService.getTokenByKey("access_token");
     return (
         <>
-            <Switch>
-                <Public
-            </Switch>
+            <Routes>
+                <PublicRoute 
+                path= "/login" 
+                isUserAuthenticated = {isUserAuthenticated} 
+                exact 
+                component ={Login} />
+            </Routes>
         </>
     )
 }

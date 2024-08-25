@@ -1,2 +1,20 @@
+import {Route} from 'react-router-dom';
+import PublicLayout from './PublicLayout';
 import React from 'react';
-import {Route,Redirect} from 'react-router-dom';
+
+export default function PublicRoute({
+    component : Component,
+    ...props
+} : any)
+{
+return <React.Fragment> 
+    <Route>
+        {...props}
+        render = {(innerProps: any) => {
+            <PublicLayout>
+                <Component {...innerProps}></Component>
+            </PublicLayout>
+        }}
+    </Route>
+</React.Fragment>
+}

@@ -1,7 +1,7 @@
 interface ITokenObj  {
     access_token : string,
-    refresh_token :  string,
-    loginType: string
+    refresh_token? :  string,
+    loginType?: string
 };
 
 const LocalStorageService =  (function() {
@@ -9,8 +9,8 @@ const LocalStorageService =  (function() {
     function _setToken(tokenObj : ITokenObj)
     {
         localStorage.setItem("access_token",tokenObj.access_token);
-        localStorage.setItem("refresh_token",tokenObj.refresh_token);
-        localStorage.setItem("loginType",tokenObj.loginType);
+        localStorage.setItem("refresh_token",tokenObj.refresh_token ?? "");
+        localStorage.setItem("loginType",tokenObj.loginType ?? "");
     }
 
     function _getTokenByKey(tokenKey : string)
