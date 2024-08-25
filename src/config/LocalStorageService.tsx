@@ -16,7 +16,7 @@ const LocalStorageService =  (function() {
     function _getTokenByKey(tokenKey : string)
     {
         console.log(localStorage.getItem(tokenKey));
-        localStorage.getItem(tokenKey);
+        return localStorage.getItem(tokenKey);
     }
 
     function _clearToken()
