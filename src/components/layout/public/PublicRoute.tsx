@@ -1,20 +1,19 @@
 import {Route} from 'react-router-dom';
 import PublicLayout from './PublicLayout';
-import React from 'react';
 
 export default function PublicRoute({
     component : Component,
     ...props
 } : any)
 {
-return <React.Fragment> 
-    <Route>
+return (
+    <Route
         {...props}
-        render = {(innerProps: any) => {
+        element = {
             <PublicLayout>
-                <Component {...innerProps}></Component>
+                <Component></Component>
             </PublicLayout>
-        }}
-    </Route>
-</React.Fragment>
+        }
+     />
+)
 }

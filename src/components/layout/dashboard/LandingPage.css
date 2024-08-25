@@ -1,0 +1,64 @@
+/* General styling for the landing page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to right, #4facfe, #00f2fe);
+  }
+  
+  .welcome-box {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .welcome-box h1 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .welcome-box p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 18px;
+  }
+  
+  .welcome-box ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .welcome-box li {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .logout-button {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .logout-button:hover {
+    background-color: #e55d50;
+  }
+  

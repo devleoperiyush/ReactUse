@@ -1,9 +1,12 @@
-export default function PublicLayout(props : any)
+import { Navigate } from "react-router-dom";
+
+export default function PublicLayout({isUserAuthenticated, children} : any)
 {
+    console.log("isUserAuthenticated1",isUserAuthenticated);
     return (
         <>
             <div>
-            {props.children}
+               {isUserAuthenticated ? <Navigate to="/landing" />: children  }
             </div>
         </>
     )
