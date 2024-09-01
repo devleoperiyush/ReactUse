@@ -27,6 +27,15 @@ export default function Layout(){
                     </PublicLayout>
             }
      />
+      <Route
+            path= "/"
+            element = {
+                    <PublicLayout 
+                        isUserAuthenticated = {isUserAuthenticated}>
+                        <Login></Login>
+                    </PublicLayout>
+            }
+     />
      <Route
             path= "/landing"
             element = {
