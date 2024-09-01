@@ -1,4 +1,3 @@
-import { applyMiddleware } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
 
 import appReducerObject from "./rootReducer";
@@ -7,7 +6,11 @@ import rootSaga from "./rootSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
-const store = configureStore(appReducerObject, applyMiddleware(sagaMiddleware));
+const store = configureStore({
+  reducer: appReducerObject,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ serializableCheck: false }).concat(sagaMiddleware),
+});
 
 sagaMiddleware.run(rootSaga);
 
